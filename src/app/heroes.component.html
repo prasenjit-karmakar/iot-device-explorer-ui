@@ -1,0 +1,22 @@
+<h2>Registed Devices</h2>
+<div>
+  <label>Device name:</label> <input #deviceName />
+  <button (click)="add(deviceName.value); deviceName.value=''">
+    Add
+  </button>
+</div>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes" (click)="onSelect(hero)"
+      [class.selected]="hero === selectedHero">
+    <span class="badge">{{hero.deviceId}}</span>
+    <!-- <span>{{hero.deviceId}}</span> -->
+    <button class="delete"
+      (click)="delete(hero); $event.stopPropagation()">x</button>
+  </li>
+</ul>
+<div *ngIf="selectedHero">
+  <h2>
+    {{selectedHero.deviceId}}
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>

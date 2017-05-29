@@ -1,0 +1,17 @@
+.gradle/
+.metadata/
+build/
+.project
+.classpath
+.settings/
+bin/
+.idea/*
+*.iml
+*.class
+cache/
+target/
+*.log
+*.cmd
+.recommenders/
+node_modules/
+*~

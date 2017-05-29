@@ -1,0 +1,24 @@
+<div *ngIf="hero">
+  <h2>{{hero.deviceId}} details!</h2>
+  <div>
+    <label>Status:  </label>{{hero.status}}
+  </div>
+  <div>
+    <label>Last Activity Time: </label>{{hero.lastActivityTime}}
+    <!-- <input [(ngModel)]="hero.lastActivityTime" placeholder="{{ whatTime | async | date:'d/M/yy hh:mm:ss' }}" /> -->
+   </div>
+   <div *ngIf="hero.deviceTwin">
+     <label>BedRoomLights:  </label>{{hero.deviceTwin.bedRoomLights}}
+   </div>
+   <div *ngIf="hero.deviceTwin">
+     <label>HomeTemp:  </label>{{hero.deviceTwin.homeTemp}}
+   </div>
+   <div *ngIf="hero.deviceTwin">
+     <label>LivingRoomLights:  </label>{{hero.deviceTwin.livingRoomLights}}
+   </div>
+   <div *ngIf="hero.deviceTwin">
+     <label>HomeSecurityCamera:  </label>{{hero.deviceTwin.homeSecurityCamera}}
+   </div>
+  <button (click)="goBack()">Back</button>
+  <!-- <button (click)="save()">Save</button> -->
+</div>
