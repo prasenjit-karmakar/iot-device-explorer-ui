@@ -21,10 +21,11 @@ var HeroDetailComponent = (function () {
         this.location = location;
     }
     HeroDetailComponent.prototype.ngOnInit = function () {
+        var _this = this;
         //this.heroService.getHero(this.route.params.getValue('deviceId').deviceId).then(hero => this.hero = hero);
-        //  this.route.params
-        //  .switchMap((params: Params) => this.heroService.getHero(this.route.params.getValue('deviceId').deviceId))
-        //   .subscribe(hero => this.hero = hero);
+        this.route.params
+            .switchMap(function (params) { return _this.heroService.getHero(_this.route.params.getValue('deviceId').deviceId); })
+            .subscribe(function (hero) { return _this.hero = hero; });
     };
     //  save(): void {
     //  this.heroService.update(this.hero)

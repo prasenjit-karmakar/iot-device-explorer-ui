@@ -16,12 +16,13 @@ var HeroService = (function () {
     function HeroService(http) {
         this.http = http;
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
-        this.heroesUrl = 'http://34.209.187.83/api/v0/iothub/devices'; // URL to web api
+        //private heroesUrl = 'http://34.209.187.83/api/v0/iothub/devices';  // URL to web api
+        this.heroesUrl = 'http://localhost:9095/api/v0/iothub/devices';
     }
     HeroService.prototype.getHeroes = function () {
         return this.http.get(this.heroesUrl)
             .toPromise()
-            .then(function (response) { return response.json().data; })
+            .then(this.extractData)
             .catch(this.handleError);
     };
     HeroService.prototype.extractData = function (res) {

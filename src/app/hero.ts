@@ -7,5 +7,5 @@ export class Hero {
   connectionStateUpdatedTime: string;
   lastActivityTime: string;
   cloudToDeviceMessageCount: number;
-  //deviceTwin: DeviceTwin;
+  deviceTwin: DeviceTwin;
 }
