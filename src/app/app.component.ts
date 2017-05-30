@@ -13,5 +13,5 @@ import { Component }          from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Iot device explorer';
+  title = 'ABCFoods Device Manager';
 }

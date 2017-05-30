@@ -9,8 +9,8 @@ import { Hero } from './hero';
 export class HeroService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
-  //private heroesUrl = 'http://34.209.187.83/api/v0/iothub/devices';  // URL to web api
-  private heroesUrl = 'http://localhost:9095/api/v0/iothub/devices';
+  private heroesUrl = 'http://34.209.187.83/api/v0/iothub/devices';  // URL to web api
+  //private heroesUrl = 'http://localhost:9095/api/v0/iothub/devices';
 
   constructor(private http: Http) { }
 

@@ -4,7 +4,7 @@
     <label>Status:  </label>{{hero.status}}
   </div>
   <div>
-    <label>Last Activity Time: </label>{{hero.lastActivityTime}}
+    <label>Last Activity Time: </label>{{hero.lastActivityTime  | date:'d/M/yy hh:mm:ss'}}
     <!-- <input [(ngModel)]="hero.lastActivityTime" placeholder="{{ whatTime | async | date:'d/M/yy hh:mm:ss' }}" /> -->
    </div>
    <div *ngIf="hero.deviceTwin">
