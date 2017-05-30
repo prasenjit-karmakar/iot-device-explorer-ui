@@ -5,6 +5,12 @@
     Add
   </button>
 </div>
+<div *ngIf="selectedHero">
+  <h2>
+    {{selectedHero.deviceId}}
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
 <ul class="heroes">
   <li *ngFor="let hero of heroes" (click)="onSelect(hero)"
       [class.selected]="hero === selectedHero">
@@ -13,10 +19,5 @@
     <button class="delete"
       (click)="delete(hero); $event.stopPropagation()">x</button>
   </li>
+
 </ul>
-<div *ngIf="selectedHero">
-  <h2>
-    {{selectedHero.deviceId}}
-  </h2>
-  <button (click)="gotoDetail()">View Details</button>
-</div>
