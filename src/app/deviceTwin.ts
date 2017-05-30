@@ -1,6 +1,6 @@
 export class DeviceTwin {
-  bedRoomLights: string;
-  homeTemp: string;
-  homeSecurityCamera: string;
-  livingRoomLights: string
+  manufacturer: string;
+  modelNumber: string;
+  nestServiceDate: string;
+  lastServiceDate: string
 }

@@ -8,16 +8,16 @@
     <!-- <input [(ngModel)]="hero.lastActivityTime" placeholder="{{ whatTime | async | date:'d/M/yy hh:mm:ss' }}" /> -->
    </div>
    <div *ngIf="hero.deviceTwin">
-     <label>BedRoomLights:  </label>{{hero.deviceTwin.bedRoomLights}}
+     <label>Manufacturer:  </label>{{hero.deviceTwin.manufacturer}}
    </div>
    <div *ngIf="hero.deviceTwin">
-     <label>HomeTemp:  </label>{{hero.deviceTwin.homeTemp}}
+     <label>ModelNumber:  </label>{{hero.deviceTwin.modelNumber}}
    </div>
    <div *ngIf="hero.deviceTwin">
-     <label>LivingRoomLights:  </label>{{hero.deviceTwin.livingRoomLights}}
+     <label>Last service Date:  </label>{{hero.deviceTwin.lastServiceDate}}
    </div>
    <div *ngIf="hero.deviceTwin">
-     <label>HomeSecurityCamera:  </label>{{hero.deviceTwin.homeSecurityCamera}}
+     <label>Next service Date:  </label>{{hero.deviceTwin.nextServiceDate}}
    </div>
   <button (click)="goBack()">Back</button>
   <!-- <button (click)="save()">Save</button> -->
