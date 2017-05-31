@@ -12,54 +12,54 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
-var HeroService = (function () {
-    function HeroService(http) {
+var DeviceService = (function () {
+    function DeviceService(http) {
         this.http = http;
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
-        //private heroesUrl = 'http://34.209.187.83/api/v0/iothub/devices';  // URL to web api
-        this.heroesUrl = 'http://localhost:9095/api/v0/iothub/devices';
+        //private apiUrl = 'http://34.209.187.83/api/v0/iothub/devices';  // URL to web api
+        this.apiUrl = 'http://localhost:9095/api/v0/iothub/devices';
     }
-    HeroService.prototype.getHeroes = function () {
-        return this.http.get(this.heroesUrl)
+    DeviceService.prototype.getDevices = function () {
+        return this.http.get(this.apiUrl)
             .toPromise()
-            .then(this.extractData)
+            .then(function (response) { return response.json(); })
             .catch(this.handleError);
     };
-    HeroService.prototype.extractData = function (res) {
+    DeviceService.prototype.extractData = function (res) {
         var body = res.json();
         return body;
     };
-    HeroService.prototype.getHero = function (deviceId) {
-        var url = this.heroesUrl + "/" + deviceId;
+    DeviceService.prototype.getDevice = function (deviceId) {
+        var url = this.apiUrl + "/" + deviceId;
         return this.http.get(url)
             .toPromise()
             .then(function (response) { return response.json(); })
             .catch(this.handleError);
     };
-    HeroService.prototype.delete = function (deviceId) {
-        var url = this.heroesUrl + "/" + deviceId;
+    DeviceService.prototype.delete = function (deviceId) {
+        var url = this.apiUrl + "/" + deviceId;
         return this.http.delete(url, { headers: this.headers })
             .toPromise()
             .then(function () { return null; })
             .catch(this.handleError);
     };
-    HeroService.prototype.create = function (deviceId) {
-        var url = this.heroesUrl + "/" + deviceId;
+    DeviceService.prototype.create = function (deviceId) {
+        var url = this.apiUrl + "/" + deviceId;
         return this.http
             .post(url, { headers: this.headers })
             .toPromise()
             .then(function (res) { return res.json(); })
             .catch(this.handleError);
     };
-    HeroService.prototype.handleError = function (error) {
-        console.error('An error occurred', error); // for demo purposes only
+    DeviceService.prototype.handleError = function (error) {
+        console.error('An error occurred', error);
         return Promise.reject(error.message || error);
     };
-    return HeroService;
+    return DeviceService;
 }());
-HeroService = __decorate([
+DeviceService = __decorate([
     core_1.Injectable(),
     __metadata("design:paramtypes", [http_1.Http])
-], HeroService);
-exports.HeroService = HeroService;
-//# sourceMappingURL=hero.service.js.map
+], DeviceService);
+exports.DeviceService = DeviceService;
+//# sourceMappingURL=device.service.js.map

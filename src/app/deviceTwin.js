@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var DeviceTwin = (function () {
-    function DeviceTwin() {
+    function DeviceTwin(manufacturer, modelNumber, nestServiceDate, lastServiceDate) {
     }
     return DeviceTwin;
 }());

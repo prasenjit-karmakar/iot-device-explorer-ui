@@ -1,0 +1,23 @@
+<div *ngIf="device">
+  <h2>{{device.deviceId}} details!</h2>
+  <div>
+    <label>Status:  </label>{{device.status}}
+  </div>
+  <div>
+    <label>Last Activity Time: </label>{{device.lastActivityTime  | date:'d/M/yy hh:mm:ss'}}
+   </div>
+   <div *ngIf="device.deviceTwin">
+     <label>Manufacturer:  </label>{{device.deviceTwin.manufacturer}}
+   </div>
+   <div *ngIf="device.deviceTwin">
+     <label>ModelNumber:  </label>{{device.deviceTwin.modelNumber}}
+   </div>
+   <div *ngIf="device.deviceTwin">
+     <label>Last service Date:  </label>{{device.deviceTwin.lastServiceDate}}
+   </div>
+   <div *ngIf="device.deviceTwin">
+     <label>Next service Date:  </label>{{device.deviceTwin.nextServiceDate}}
+   </div>
+  <button (click)="goBack()">Back</button>
+  <!-- <button (click)="save()">Save</button> -->
+</div>

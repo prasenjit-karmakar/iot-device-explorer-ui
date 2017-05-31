@@ -1,4 +1,5 @@
-export class Hero {
+import { DeviceTwin }           from './deviceTwin';
+export class Device {
   deviceId: string;
   generationId: string;
   status: string;
@@ -8,4 +9,5 @@ export class Hero {
   lastActivityTime: string;
   cloudToDeviceMessageCount: number;
   deviceTwin: DeviceTwin;
+
 }

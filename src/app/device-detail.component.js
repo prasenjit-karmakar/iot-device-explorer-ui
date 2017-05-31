@@ -13,38 +13,33 @@ require("rxjs/add/operator/switchMap");
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
-var hero_service_1 = require("./hero.service");
-var HeroDetailComponent = (function () {
-    function HeroDetailComponent(heroService, route, location) {
-        this.heroService = heroService;
+var device_service_1 = require("./device.service");
+var DeviceDetailComponent = (function () {
+    function DeviceDetailComponent(deviceService, route, location) {
+        this.deviceService = deviceService;
         this.route = route;
         this.location = location;
     }
-    HeroDetailComponent.prototype.ngOnInit = function () {
+    DeviceDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
-        //this.heroService.getHero(this.route.params.getValue('deviceId').deviceId).then(hero => this.hero = hero);
         this.route.params
-            .switchMap(function (params) { return _this.heroService.getHero(_this.route.params.getValue('deviceId').deviceId); })
-            .subscribe(function (hero) { return _this.hero = hero; });
+            .switchMap(function (params) { return _this.deviceService.getDevice(params['deviceId']); })
+            .subscribe(function (device) { return _this.device = device; });
     };
-    //  save(): void {
-    //  this.heroService.update(this.hero)
-    //    .then(() => this.goBack());
-    //}
-    HeroDetailComponent.prototype.goBack = function () {
+    DeviceDetailComponent.prototype.goBack = function () {
         this.location.back();
     };
-    return HeroDetailComponent;
+    return DeviceDetailComponent;
 }());
-HeroDetailComponent = __decorate([
+DeviceDetailComponent = __decorate([
     core_1.Component({
-        selector: 'hero-detail',
-        templateUrl: './hero-detail.component.html',
-        styleUrls: ['./hero-detail.component.css']
+        selector: 'device-detail',
+        templateUrl: './device-detail.component.html',
+        styleUrls: ['./device-detail.component.css']
     }),
-    __metadata("design:paramtypes", [hero_service_1.HeroService,
+    __metadata("design:paramtypes", [device_service_1.DeviceService,
         router_1.ActivatedRoute,
         common_1.Location])
-], HeroDetailComponent);
-exports.HeroDetailComponent = HeroDetailComponent;
-//# sourceMappingURL=hero-detail.component.js.map
+], DeviceDetailComponent);
+exports.DeviceDetailComponent = DeviceDetailComponent;
+//# sourceMappingURL=device-detail.component.js.map
